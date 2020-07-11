@@ -38,5 +38,18 @@ class Song
     self.sort_by{|s| s.name}
   end
 
+#  def self.new_from_filename(file_name)
+#    parse = file_name.split (" - ")
+#    name = parse[0]
+#    song = 
+
+    def self.new_from_filename(name)
+        song=self.new
+        song.name = name.split(/[.]/)[1]
+        song.artist_name =name.split(/./)[0]
+        song
+    end
+  end
+
 
 end
